@@ -95,6 +95,9 @@
 	</ItemGroup>
 	
 	<ItemGroup>
+	  <MauiXaml Update="DesktopFeedPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="FeedContentPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

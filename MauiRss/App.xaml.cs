@@ -36,7 +36,7 @@ namespace MauiRss
         /// <inheritdoc/>
         protected override Window CreateWindow(IActivationState activationState)
         {
-            return new Window(new NavigationPage(this.services.GetService<FeedListPage>()));
+            return new Window(this.services.GetService<DesktopFeedPage>());
         }
     }
 }

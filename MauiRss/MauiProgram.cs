@@ -31,10 +31,12 @@ namespace MauiRss
             builder.Services.AddSingleton<ITemplateService, TemplateService>();
             builder.Services.AddTransient<FeedListViewModel>();
             builder.Services.AddTransient<FeedViewModel>();
+            builder.Services.AddTransient<DesktopFeedViewModel>();
             builder.Services.AddTransient<FeedContentViewModel>();
             builder.Services.AddTransient<NewFeedItemViewModel>();
             builder.Services.AddTransient<FeedListPage>();
             builder.Services.AddTransient<FeedPage>();
+            builder.Services.AddTransient<DesktopFeedPage>();
             builder.Services.AddTransient<FeedContentPage>();
             builder.Services.AddTransient<NewFeedListItemPage>();
             builder

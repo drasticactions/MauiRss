@@ -46,7 +46,7 @@ namespace MauiRss.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the Title.
+        /// Gets or sets the feeds.
         /// </summary>
         public List<FeedListItem> Feeds
         {
@@ -55,7 +55,7 @@ namespace MauiRss.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the Title.
+        /// Gets or sets the selected item.
         /// </summary>
         public FeedListItem SelectedItem
         {
