@@ -78,6 +78,12 @@ namespace MauiRss.Services
             return this.GoBackPageInWindowAsync(this.GetMainWindow());
         }
 
+        /// <inheritdoc/>
+        public Task<string> DisplayPromptAsync(string title, string message)
+        {
+            return this.GetMainWindow().Page.DisplayPromptAsync(title, message);
+        }
+
         private Window GetMainWindow()
         {
             return App.Current.Windows[0];

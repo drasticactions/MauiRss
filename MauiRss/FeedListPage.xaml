@@ -15,21 +15,11 @@
                 <CollectionView
                 x:Name="FeedListItemCollection"
                 SelectionMode="Single"
+                ItemTemplate="{StaticResource FeedListTemplate}"
                 SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference FeedListItemCollection}}" 
                 SelectionChangedCommand="{Binding NavigateToFeedPageCommand}"
                 ItemsSource="{Binding Feeds}"
                 Grid.Row="0">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Margin="5" ColumnSpacing="10" ColumnDefinitions="50, *">
-                                <Image VerticalOptions="Center" HeightRequest="50" Grid.Column="0" Source="{Binding ImageUri}"/>
-                                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="5">
-                                    <Label FontAttributes="Bold" Text="{Binding Name}" />
-                                    <Label MaxLines="2" Text="{Binding Description}" />
-                                </VerticalStackLayout>
-                            </Grid>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
                 </CollectionView>
             </RefreshView>
             <Button Grid.Row="1" 

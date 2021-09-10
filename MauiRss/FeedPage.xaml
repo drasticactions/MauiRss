@@ -8,21 +8,10 @@
         <RefreshView RefreshColor="Green" IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshFeedCommand}">
             <CollectionView  x:Name="FeedItemCollection"
                          SelectionMode="Single"
+                         ItemTemplate="{StaticResource FeedTemplate}"
                          SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference FeedItemCollection}}" 
                          SelectionChangedCommand="{Binding NavigateToFeedContentPageCommand}"
                          ItemsSource="{Binding FeedItems}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <VerticalStackLayout Spacing="5">
-                                <Label FontSize="Caption" Text="{Binding PublishingDateString}"/>
-                                <Label FontSize="Title" Text="{Binding Title}"/>
-                                <Label MaxLines="3" Text="{Binding Description}"/>
-                                <Label FontSize="Caption" Text="{Binding Author}"/>
-                            </VerticalStackLayout>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
             </CollectionView>
         </RefreshView>
 	</ContentPage.Content>

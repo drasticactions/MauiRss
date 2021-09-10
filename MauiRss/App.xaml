@@ -7,6 +7,9 @@
              windows:Application.ImageDirectory="Assets">
     <Application.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/DataTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
             <converters:IntEnumConverter x:Key="IntEnumConverter"/>
         </ResourceDictionary>
     </Application.Resources>

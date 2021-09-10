@@ -82,9 +82,14 @@ namespace MauiRss.ViewModels
         /// Navigates to Add New Feed List Item page.
         /// </summary>
         /// <returns>Task.</returns>
-        public Task AddNewFeedListItemAsync()
+        public async Task AddNewFeedListItemAsync()
         {
-            return this.Navigation.PushPageInMainWindowAsync(this.Services.GetService<NewFeedListItemPage>());
+            var feedUri = await this.Navigation.DisplayPromptAsync(Translations.Common.NewFeedListItemTitle, Translations.Common.NewFeedListItemTitle);
+            if (feedUri != null)
+            {
+                await this.AddOrUpdateNewFeedListItemAsync(feedUri);
+                this.RefreshFeedList();
+            }
         }
 
         /// <summary>
@@ -108,12 +113,12 @@ namespace MauiRss.ViewModels
         public override async Task LoadAsync()
         {
             await base.LoadAsync();
+            this.SelectedItem = null;
             this.RefreshFeedList();
         }
 
         private void RefreshFeedList()
         {
-            this.SelectedItem = null;
             var feeds = this.Database.GetFeedListItems();
             if (this.Feeds != feeds)
             {

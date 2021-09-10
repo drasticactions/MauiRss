@@ -61,5 +61,13 @@ namespace MauiRss.Services
         /// </summary>
         /// <returns><see cref="Task"/>.</returns>
         public Task GoBackPageInMainWindowAsync();
+
+        /// <summary>
+        /// Display Prompt.
+        /// </summary>
+        /// <param name="title">Title of Prompt.</param>
+        /// <param name="message">Message of Prompt.</param>
+        /// <returns>String.</returns>
+        public Task<string> DisplayPromptAsync(string title, string message);
     }
 }
