@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage x:Class="MauiRss.FeedListPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:MauiRss.Translations"
+             xmlns:local="clr-namespace:MauiRss"
+             Title="{Binding Title}">
+	<ContentPage.Content>
+        <Grid RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <RefreshView RefreshColor="Green" IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshFeedListCommand}">
+                <CollectionView
+                x:Name="FeedListItemCollection"
+                SelectionMode="Single"
+                SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference FeedListItemCollection}}" 
+                SelectionChangedCommand="{Binding NavigateToFeedPageCommand}"
+                ItemsSource="{Binding Feeds}"
+                Grid.Row="0">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="5" ColumnSpacing="10" ColumnDefinitions="50, *">
+                                <Image VerticalOptions="Center" HeightRequest="50" Grid.Column="0" Source="{Binding ImageUri}"/>
+                                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="5">
+                                    <Label FontAttributes="Bold" Text="{Binding Name}" />
+                                    <Label MaxLines="2" Text="{Binding Description}" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+            <Button Grid.Row="1" 
+                    Margin="10"
+                    Command="{Binding AddNewFeedListItemCommand}" 
+                    Text="{x:Static resources:Common.AddNewFeedListItemButton}"/>
+        </Grid>
+	</ContentPage.Content>
+</local:BasePage>

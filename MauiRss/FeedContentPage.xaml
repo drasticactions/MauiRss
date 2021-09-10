@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage x:Class="MauiRss.FeedContentPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:MauiRss">
+	<ContentPage.Content>
+        <RefreshView RefreshColor="Green" IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshFeedCommand}">
+            <WebView x:Name="FeedWebView"/>
+        </RefreshView>
+    </ContentPage.Content>
+</local:BasePage>
