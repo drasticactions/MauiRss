@@ -149,6 +149,11 @@ namespace MauiRss.ViewModels
 
         private async Task RefreshFeedAsync(FeedListItem item)
         {
+            if (item == null)
+            {
+                return;
+            }
+
             item = await this.AddOrUpdateNewFeedListItemAsync(item.Uri.ToString());
             this.FeedItems = this.Database.GetFeedItems(item);
             this.Title = item.Name;
@@ -157,6 +162,11 @@ namespace MauiRss.ViewModels
 
         private async Task RefreshFeedContentAsync(FeedItem item)
         {
+            if (item == null)
+            {
+                return;
+            }
+
             await this.UpdateFeedItem(item);
             this.RenderHtml(item);
             this.Title = item.Title;

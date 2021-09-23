@@ -81,7 +81,7 @@ namespace MauiRss.Services
         /// <inheritdoc/>
         public Task<string> DisplayPromptAsync(string title, string message)
         {
-            return this.GetMainWindow().Page.DisplayPromptAsync(title, message);
+            return this.GetMainWindow().Page.DisplayPromptAsync(title, message, keyboard: Microsoft.Maui.Keyboard.Url);
         }
 
         private Window GetMainWindow()

@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="Themes/DataTemplates.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <converters:IntEnumConverter x:Key="IntEnumConverter"/>
+            <converters:UrlImageConverter x:Key="UrlImageConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

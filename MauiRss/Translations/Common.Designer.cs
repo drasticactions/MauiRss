@@ -22,7 +22,7 @@ namespace MauiRss.Translations {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Common {
+    public class Common {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace MauiRss.Translations {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MauiRss.Translations.Common", typeof(Common).Assembly);
@@ -51,7 +51,7 @@ namespace MauiRss.Translations {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace MauiRss.Translations {
         /// <summary>
         ///   Looks up a localized string similar to Add Feed.
         /// </summary>
-        internal static string AddNewFeedListItemButton {
+        public static string AddNewFeedListItemButton {
             get {
                 return ResourceManager.GetString("AddNewFeedListItemButton", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace MauiRss.Translations {
         /// <summary>
         ///   Looks up a localized string similar to MauiRss.
         /// </summary>
-        internal static string AppTitle {
+        public static string AppTitle {
             get {
                 return ResourceManager.GetString("AppTitle", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace MauiRss.Translations {
         /// <summary>
         ///   Looks up a localized string similar to Check Feed.
         /// </summary>
-        internal static string CheckFeedButton {
+        public static string CheckFeedButton {
             get {
                 return ResourceManager.GetString("CheckFeedButton", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace MauiRss.Translations {
         /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
-        internal static string CloseButton {
+        public static string CloseButton {
             get {
                 return ResourceManager.GetString("CloseButton", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace MauiRss.Translations {
         /// <summary>
         ///   Looks up a localized string similar to An {0} has occured: {1} @ {2}.
         /// </summary>
-        internal static string ErrorMessage {
+        public static string ErrorMessage {
             get {
                 return ResourceManager.GetString("ErrorMessage", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace MauiRss.Translations {
         /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
-        internal static string ErrorTitle {
+        public static string ErrorTitle {
             get {
                 return ResourceManager.GetString("ErrorTitle", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace MauiRss.Translations {
         /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
-        internal static string FeedNameTitle {
+        public static string FeedNameTitle {
             get {
                 return ResourceManager.GetString("FeedNameTitle", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace MauiRss.Translations {
         /// <summary>
         ///   Looks up a localized string similar to Feed Type.
         /// </summary>
-        internal static string FeedTypeItem {
+        public static string FeedTypeItem {
             get {
                 return ResourceManager.GetString("FeedTypeItem", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace MauiRss.Translations {
         /// <summary>
         ///   Looks up a localized string similar to Url.
         /// </summary>
-        internal static string FeedUriTitle {
+        public static string FeedUriTitle {
             get {
                 return ResourceManager.GetString("FeedUriTitle", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace MauiRss.Translations {
         /// <summary>
         ///   Looks up a localized string similar to Add Feed.
         /// </summary>
-        internal static string NewFeedListItemTitle {
+        public static string NewFeedListItemTitle {
             get {
                 return ResourceManager.GetString("NewFeedListItemTitle", resourceCulture);
             }

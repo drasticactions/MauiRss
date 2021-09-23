@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary x:Class="MauiRss.Themes.Styles"
+                    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:local="clr-namespace:MauiRss.Themes">
+    <Color x:Key="DarkBackgroundColor">#272727</Color>
+    <Color x:Key="DarkImageBackgroundColor">#464646</Color>
+    <Color x:Key="DarkButtonBackgroundColor">#464646</Color>
+    <Color x:Key="DarkItemBackgroundColor">#323232</Color>
+    <Color x:Key="DarkTextColor">#FFFFFF</Color>
+    <Style TargetType="Button">
+        <Setter Property="TextColor" Value="{DynamicResource DarkTextColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource DarkButtonBackgroundColor}" />
+        <Setter Property="Padding" Value="14,10" />
+        <Setter Property="CornerRadius" Value="5" />
+    </Style>
+</ResourceDictionary>
