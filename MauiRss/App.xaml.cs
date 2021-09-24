@@ -36,9 +36,8 @@ namespace MauiRss
         /// <inheritdoc/>
         protected override Window CreateWindow(IActivationState activationState)
         {
-            return Device.RuntimePlatform == Device.UWP
-                || Device.RuntimePlatform == Device.WPF
-                || Device.RuntimePlatform == Device.macOS
+            return Device.Idiom == TargetIdiom.Desktop
+                || Device.Idiom == TargetIdiom.Tablet
                 ? new Window(this.services.GetService<DesktopFeedPage>())
                 : new Window(new NavigationPage(this.services.GetService<FeedListPage>()));
         }
