@@ -88,7 +88,7 @@ namespace MauiRss.Tools
         public void RaiseCanExecuteChanged()
 #pragma warning restore CA1030 // Use events where appropriate
         {
-            MainThread.BeginInvokeOnMainThread(() => this.CanExecuteChanged?.Invoke(this, EventArgs.Empty));
+            App.Current.Dispatcher.Dispatch(() => this.CanExecuteChanged?.Invoke(this, EventArgs.Empty));
         }
 
         /// <inheritdoc/>

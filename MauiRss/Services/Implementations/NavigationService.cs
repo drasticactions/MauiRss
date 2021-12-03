@@ -29,7 +29,7 @@ namespace MauiRss.Services
         /// <inheritdoc/>
         public Task DisplayAlertAsync(string title, string message)
         {
-            MainThread.BeginInvokeOnMainThread(async () => await App.Current.MainPage.DisplayAlert(title, message, Translations.Common.CloseButton).ConfigureAwait(false));
+            App.Current.Dispatcher.Dispatch(async () => await App.Current.MainPage.DisplayAlert(title, message, Translations.Common.CloseButton).ConfigureAwait(false));
             return Task.CompletedTask;
         }
 
