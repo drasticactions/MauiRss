@@ -20,8 +20,8 @@ namespace MauiRss
         private MauiRssWindowViewModel vm;
         private SidebarViewController sidebar;
         private UISplitViewController splitView;
-        private Controls.FeedContentControl feedContentControl;
-        private Controls.FeedListControl feedListControl;
+        private FeedContentPage feedContentControl;
+        private FeedListPage feedListControl;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MauiRssWindow"/> class.
@@ -35,8 +35,8 @@ namespace MauiRss
             this.sidebar = new SidebarViewController(this, this.vm);
             this.splitView = new UISplitViewController();
             this.splitView.PrimaryBackgroundStyle = UISplitViewControllerBackgroundStyle.Sidebar;
-            this.feedContentControl = new Controls.FeedContentControl(this.vm);
-            this.feedListControl = new Controls.FeedListControl(this.vm);
+            this.feedContentControl = new FeedContentPage(this.vm);
+            this.feedListControl = new FeedListPage(this.vm);
         }
 
         /// <inheritdoc/>
@@ -71,7 +71,7 @@ namespace MauiRss
             var feedListUIControl = this.feedListControl.ToUIViewController(context);
             var feedContextUIControl = this.feedContentControl.ToUIViewController(context);
 
-            this.splitView.ViewControllers = new UIViewController[] { new UINavigationController(this.sidebar), feedListUIControl };
+            this.splitView.ViewControllers = new UIViewController[] { new UINavigationController(this.sidebar), feedListUIControl, feedContextUIControl };
             window.RootViewController = this.splitView;
         }
     }
