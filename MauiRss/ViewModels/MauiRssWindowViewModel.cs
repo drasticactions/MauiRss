@@ -29,7 +29,7 @@ namespace MauiRss.ViewModels
         /// <summary>
         /// Gets or sets the Feed Items.
         /// </summary>
-        public ObservableCollection<FeedItem> FeedItems { get; } = new ObservableCollection<FeedItem>();
+        public List<FeedItem> FeedItems { get; } = new List<FeedItem>();
 
         /// <summary>
         /// Gets the Update Feed Content Command.
@@ -63,6 +63,8 @@ namespace MauiRss.ViewModels
             {
                 this.FeedItems.Add(feedItem);
             }
+
+            this.OnPropertyChanged(nameof(this.FeedItems));
         }
 
         public void SetWebview(WebView webView)

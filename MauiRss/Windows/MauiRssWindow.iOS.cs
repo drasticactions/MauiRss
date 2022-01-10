@@ -23,7 +23,6 @@ namespace MauiRss
         private Controls.FeedContentControl feedContentControl;
         private Controls.FeedListControl feedListControl;
 
-
         /// <summary>
         /// Initializes a new instance of the <see cref="MauiRssWindow"/> class.
         /// </summary>
@@ -72,7 +71,7 @@ namespace MauiRss
             var feedListUIControl = this.feedListControl.ToUIViewController(context);
             var feedContextUIControl = this.feedContentControl.ToUIViewController(context);
 
-            this.splitView.ViewControllers = new UIViewController[] { new UINavigationController(this.sidebar), feedListUIControl, feedContextUIControl };
+            this.splitView.ViewControllers = new UIViewController[] { new UINavigationController(this.sidebar), feedListUIControl };
             window.RootViewController = this.splitView;
         }
     }
@@ -119,9 +118,10 @@ namespace MauiRss
         {
             base.ViewDidLoad();
 
+            this.NavigationItem.Title = Translations.Common.AppTitle;
             this.NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Always;
 
-            var addButton = new UIBarButtonItem(UIImage.GetSystemImage("add"), UIBarButtonItemStyle.Plain, this.OpenAddFeed);
+            var addButton = new UIBarButtonItem(UIImage.GetSystemImage("gear"), UIBarButtonItemStyle.Plain, this.OpenAddFeed);
             addButton.AccessibilityLabel = Translations.Common.AddNewFeedListItemButton;
             this.NavigationItem.RightBarButtonItem = addButton;
 
@@ -148,6 +148,21 @@ namespace MauiRss
             this.ConfigureDataSource();
 
             this.SetupNavigationItems(this.GetNavigationSnapshot(this.vm.Feeds));
+        }
+
+        /// <summary>
+        /// Item Selected.
+        /// </summary>
+        /// <param name="collectionView">Collection View.</param>
+        /// <param name="indexPath">Index Path.</param>
+        [Export("collectionView:didSelectItemAtIndexPath:")]
+        protected void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
+        {
+            var sidebarItem = this.dataSource?.GetItemIdentifier(indexPath);
+            if (sidebarItem is not null)
+            {
+                this.vm.SetFeedListItem(sidebarItem.FeedListItem);
+            }
         }
 
         private void SetupNavigationItems(NSDiffableDataSourceSectionSnapshot<NavigationSidebarItem> snapshot)
