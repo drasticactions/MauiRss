@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView x:Class="MauiRss.Controls.HeaderControl"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:MauiRss.Translations"
+             xmlns:local="clr-namespace:MauiRss.Controls">
+	<ContentView.Content>
+		<VerticalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+			<Label Text="MauiRss"
+                   FontSize="50"
+			       HorizontalOptions="CenterAndExpand"
+			       VerticalOptions="CenterAndExpand"/>
+            <Button Clicked="OnNewItemClicked" Text="{x:Static resources:Common.AddNewFeedListItemButton}" />
+        </VerticalStackLayout>
+	</ContentView.Content>
+</ContentView>

@@ -2,16 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
              xmlns:local="clr-namespace:MauiRss"
-             xmlns:converters="clr-namespace:MauiRss.Tools.Converters"
              x:Class="MauiRss.App"
              windows:Application.ImageDirectory="Assets">
     <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Themes/DataTemplates.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-            <converters:IntEnumConverter x:Key="IntEnumConverter"/>
-            <converters:UrlImageConverter x:Key="UrlImageConverter"/>
-        </ResourceDictionary>
     </Application.Resources>
 </Application>

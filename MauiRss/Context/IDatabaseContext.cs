@@ -2,11 +2,6 @@
 // Copyright (c) Drastic Actions. All rights reserved.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MauiRss.Models;
 
 namespace MauiRss.Context
@@ -21,6 +16,20 @@ namespace MauiRss.Context
         /// </summary>
         /// <returns>List of FeedListItems.</returns>
         public List<FeedListItem> GetFeedListItems();
+
+        /// <summary>
+        /// Does the feed list item exist in the database.
+        /// </summary>
+        /// <param name="item">Feed list item.</param>
+        /// <returns>Bool.</returns>
+        public bool DoesFeedListItemExist(FeedListItem item);
+
+        /// <summary>
+        /// Get a feed list item via uri.
+        /// </summary>
+        /// <param name="uri">Uri.</param>
+        /// <returns>FeedListItem.</returns>
+        public FeedListItem? GetFeedListItem(Uri uri);
 
         /// <summary>
         /// Adds or updates a new feed list item to the database.

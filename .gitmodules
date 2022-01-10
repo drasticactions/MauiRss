@@ -1,0 +1,3 @@
+[submodule "external/drasticmaui"]
+	path = external/drasticmaui
+	url = git@github.com:drasticactions/DrasticMaui.git

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiRss", "MauiRss\MauiRss.csproj", "{98B7460C-7A7C-4092-82D7-FA08D9FB211E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrasticMaui", "external\drasticmaui\DrasticMaui\DrasticMaui.csproj", "{AAB3815C-AA8A-4633-BD02-439C32EA61EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,14 @@ Global
 		{98B7460C-7A7C-4092-82D7-FA08D9FB211E}.Release|x64.ActiveCfg = Release|x64
 		{98B7460C-7A7C-4092-82D7-FA08D9FB211E}.Release|x64.Build.0 = Release|x64
 		{98B7460C-7A7C-4092-82D7-FA08D9FB211E}.Release|x64.Deploy.0 = Release|x64
+		{AAB3815C-AA8A-4633-BD02-439C32EA61EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB3815C-AA8A-4633-BD02-439C32EA61EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB3815C-AA8A-4633-BD02-439C32EA61EB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AAB3815C-AA8A-4633-BD02-439C32EA61EB}.Debug|x64.Build.0 = Debug|Any CPU
+		{AAB3815C-AA8A-4633-BD02-439C32EA61EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB3815C-AA8A-4633-BD02-439C32EA61EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB3815C-AA8A-4633-BD02-439C32EA61EB}.Release|x64.ActiveCfg = Release|Any CPU
+		{AAB3815C-AA8A-4633-BD02-439C32EA61EB}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

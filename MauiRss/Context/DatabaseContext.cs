@@ -2,15 +2,8 @@
 // Copyright (c) Drastic Actions. All rights reserved.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LiteDB;
 using MauiRss.Models;
-using Microsoft.Maui.Controls;
 
 namespace MauiRss.Context
 {
@@ -46,6 +39,10 @@ namespace MauiRss.Context
         public ILiteCollection<FeedItem> FeedItems => this.db.GetCollection<FeedItem>(FeedItemsCollection);
 
         /// <inheritdoc/>
+        public bool DoesFeedListItemExist(FeedListItem item) => this.FeedListItems.FindOne(n => n.Uri == item.Uri) is not null;
+
+
+        /// <inheritdoc/>
         public bool AddOrUpdateFeedItem(FeedItem item)
         {
             var existingItem = this.FeedItems.FindOne(n => n.RssId == item.RssId);
@@ -74,6 +71,9 @@ namespace MauiRss.Context
         {
             return this.FeedListItems.FindAll().ToList();
         }
+
+        /// <inheritdoc/>
+        public FeedListItem? GetFeedListItem(Uri uri) => this.FeedListItems.FindOne(n => n.Uri == uri);
 
         /// <inheritdoc/>
         public List<FeedItem> GetFeedItems(FeedListItem item)

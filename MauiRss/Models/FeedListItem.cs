@@ -2,11 +2,6 @@
 // Copyright (c) Drastic Actions. All rights reserved.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CodeHollow.FeedReader;
 
 namespace MauiRss.Models
@@ -73,12 +68,17 @@ namespace MauiRss.Models
         /// <summary>
         /// Gets or sets the image uri.
         /// </summary>
-        public Uri ImageUri { get; set; }
+        public Uri? ImageUri { get; set; }
 
         /// <summary>
         /// Gets or sets the Feed Uri.
         /// </summary>
         public Uri Uri { get; set; }
+
+        /// <summary>
+        /// Gets or sets the image cache.
+        /// </summary>
+        public byte[]? ImageCache { get; set; }
 
         /// <summary>
         /// Gets or sets the Feed Link.

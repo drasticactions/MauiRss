@@ -1,20 +1,9 @@
-﻿// <copyright file="AppDelegate.cs" company="Drastic Actions">
-// Copyright (c) Drastic Actions. All rights reserved.
-// </copyright>
+﻿using Foundation;
 
-using Foundation;
-using Microsoft.Maui;
-using Microsoft.Maui.Hosting;
+namespace MauiRss;
 
-namespace MauiRss
+[Register("AppDelegate")]
+public class AppDelegate : MauiUIApplicationDelegate
 {
-    /// <summary>
-    /// App Delegate.
-    /// </summary>
-    [Register("AppDelegate")]
-    public class AppDelegate : MauiUIApplicationDelegate
-    {
-        /// <inheritdoc/>
-        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
-    }
+	protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 }

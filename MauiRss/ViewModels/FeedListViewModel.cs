@@ -2,22 +2,15 @@
 // Copyright (c) Drastic Actions. All rights reserved.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DrasticMaui.Tools;
 using MauiRss.Models;
-using MauiRss.Tools;
-using MauiRss.Tools.Utilities;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace MauiRss.ViewModels
 {
     /// <summary>
     /// Feed List View Model.
     /// </summary>
-    public class FeedListViewModel : BaseViewModel
+    public class FeedListViewModel : MauiRssBaseViewModel
     {
         private List<FeedListItem> feeds;
         private FeedListItem selectedItem;
@@ -84,12 +77,12 @@ namespace MauiRss.ViewModels
         /// <returns>Task.</returns>
         public async Task AddNewFeedListItemAsync()
         {
-            var feedUri = await this.Navigation.DisplayPromptAsync(Translations.Common.NewFeedListItemTitle, Translations.Common.NewFeedListItemTitle);
-            if (feedUri != null)
-            {
-                await this.AddOrUpdateNewFeedListItemAsync(feedUri);
-                this.RefreshFeedList();
-            }
+            //var feedUri = await this.Navigation.DisplayPromptAsync(Translations.Common.NewFeedListItemTitle, Translations.Common.NewFeedListItemTitle);
+            //if (feedUri != null)
+            //{
+            //    await this.AddOrUpdateNewFeedListItemAsync(feedUri);
+            //    this.RefreshFeedList();
+            //}
         }
 
         /// <summary>
@@ -99,14 +92,15 @@ namespace MauiRss.ViewModels
         /// <returns>Task.</returns>
         public Task NavigateToFeedPageAsync(FeedListItem item)
         {
-            if (item != null)
-            {
-                return this.Navigation.PushPageInMainWindowAsync(this.Services.ResolveWith<FeedPage>(item));
-            }
-            else
-            {
-                return Task.CompletedTask;
-            }
+            //if (item != null)
+            //{
+            //    return this.Navigation.PushPageInMainWindowAsync(this.Services.ResolveWith<FeedPage>(item));
+            //}
+            //else
+            //{
+            //    return Task.CompletedTask;
+            //}
+            return Task.CompletedTask;
         }
 
         /// <inheritdoc/>

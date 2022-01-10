@@ -2,44 +2,26 @@
 // Copyright (c) Drastic Actions. All rights reserved.
 // </copyright>
 
-using System;
-using MauiRss.Context;
-using MauiRss.Services;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-using Application = Microsoft.Maui.Controls.Application;
+namespace MauiRss;
 
-namespace MauiRss
+/// <summary>
+/// Application.
+/// </summary>
+public partial class App : Application
 {
+    private IServiceProvider serviceProvider;
+
     /// <summary>
-    /// App.
+    /// Initializes a new instance of the <see cref="App"/> class.
     /// </summary>
-    public partial class App : Application
+    /// <param name="services"><see cref="IServiceProvider"/>.</param>
+    public App(IServiceProvider services)
     {
-        private readonly IServiceProvider services;
-        private readonly INavigationService navigation;
-        private readonly IDatabaseContext db;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="App"/> class.
-        /// </summary>
-        /// <param name="services">IServiceProvider.</param>
-        public App(IServiceProvider services)
-        {
-            this.services = services;
-            this.navigation = services.GetService<INavigationService>();
-            this.db = services.GetService<IDatabaseContext>();
-            this.InitializeComponent();
-        }
-
-        /// <inheritdoc/>
-        protected override Window CreateWindow(IActivationState activationState)
-        {
-            return Device.Idiom == TargetIdiom.Desktop
-                || Device.Idiom == TargetIdiom.Tablet
-                ? new Window(this.services.GetService<DesktopFeedPage>())
-                : new Window(new NavigationPage(this.services.GetService<FeedListPage>()));
-        }
+        this.serviceProvider = services;
+        this.InitializeComponent();
     }
+
+    /// <inheritdoc/>
+    protected override Window CreateWindow(IActivationState? activationState)
+        => new MauiRssWindow(this.serviceProvider);
 }

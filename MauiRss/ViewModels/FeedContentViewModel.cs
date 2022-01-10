@@ -2,21 +2,15 @@
 // Copyright (c) Drastic Actions. All rights reserved.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DrasticMaui.Tools;
 using MauiRss.Models;
-using MauiRss.Tools;
-using Microsoft.Maui.Controls;
 
 namespace MauiRss.ViewModels
 {
     /// <summary>
     /// Feed Content View Model.
     /// </summary>
-    public class FeedContentViewModel : BaseViewModel
+    public class FeedContentViewModel : MauiRssBaseViewModel
     {
         private WebView webview;
         private FeedItem feedItem;

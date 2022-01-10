@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="FeedViewModel.cs" company="Drastic Actions">
+// Copyright (c) Drastic Actions. All rights reserved.
+// </copyright>
+
+using DrasticMaui.Tools;
 using MauiRss.Models;
-using MauiRss.Tools;
-using MauiRss.Tools.Utilities;
 
 namespace MauiRss.ViewModels
 {
     /// <summary>
     /// Feed View Model.
     /// </summary>
-    public class FeedViewModel : BaseViewModel
+    public class FeedViewModel : MauiRssBaseViewModel
     {
         private List<FeedItem> feedItems;
         private FeedListItem feedListItem;
@@ -83,7 +81,8 @@ namespace MauiRss.ViewModels
         {
             if (item != null)
             {
-                return this.Navigation.PushPageInMainWindowAsync(this.Services.ResolveWith<FeedContentPage>(item));
+                return Task.CompletedTask;
+                // return this.Navigation.PushPageInMainWindowAsync(this.Services.ResolveWith<FeedContentPage>(item));
             }
             else
             {

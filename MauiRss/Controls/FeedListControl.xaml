@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView x:Class="MauiRss.Controls.FeedListControl"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Background="Transparent"
+             xmlns:local="clr-namespace:MauiRss.Controls">
+    <CollectionView Margin="0,40,0,0" SelectionMode="Single" x:Name="FeedItemCollection"
+                    SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference FeedItemCollection}}" 
+                    SelectionChangedCommand="{Binding UpdateFeedContentCommand}"
+                    ItemsSource="{Binding FeedItems}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <GridLayout Margin="2" HeightRequest="200" RowDefinitions="*, 1, 35">
+                    <GridLayout ColumnSpacing="5" ColumnDefinitions="*, 150" GridLayout.Row="0">
+                        <Label FontAttributes="Bold" VerticalOptions="Start" Text="{Binding Title}"/>
+                        <Image VerticalOptions="Start" GridLayout.Column="1" WidthRequest="125" HeightRequest="125" Aspect="Center" Source="{Binding ImageUrl}"/>
+                    </GridLayout>
+                    <GridLayout GridLayout.Row="2">
+                        <HorizontalStackLayout Spacing="5">
+                            <Label FontSize="Micro" Text="{Binding PublishingDate}"/>
+                            <Label FontSize="Micro" Text="{Binding Author}"/>
+                        </HorizontalStackLayout>
+                    </GridLayout>
+                </GridLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentView>

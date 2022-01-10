@@ -2,12 +2,6 @@
 // Copyright (c) Drastic Actions. All rights reserved.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace MauiRss.Models
 {
     /// <summary>
@@ -27,7 +21,8 @@ namespace MauiRss.Models
         /// </summary>
         /// <param name="feedListItem"><see cref="FeedListItem"/>.</param>
         /// <param name="item"><see cref="CodeHollow.FeedReader.FeedItem"/>.</param>
-        public FeedItem(FeedListItem feedListItem, CodeHollow.FeedReader.FeedItem item)
+        /// <param name="imageUrl">Image Url.</param>
+        public FeedItem(FeedListItem feedListItem, CodeHollow.FeedReader.FeedItem item, string? imageUrl = "")
         {
             this.RssId = item.Id;
             this.FeedListItemId = feedListItem.Id;
@@ -38,6 +33,7 @@ namespace MauiRss.Models
             this.Author = item.Author;
             this.Content = item.Content;
             this.PublishingDateString = item.PublishingDateString;
+            this.ImageUrl = imageUrl;
         }
 
         /// <summary>
@@ -121,7 +117,16 @@ namespace MauiRss.Models
         /// <summary>
         /// Gets or sets The html of the feed item.
         /// </summary>
-        public string Html
+        public string? Html
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets or sets The image url of the feed item.
+        /// </summary>
+        public string? ImageUrl
         {
             get;
             set;
