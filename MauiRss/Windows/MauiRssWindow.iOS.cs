@@ -2,7 +2,7 @@
 // Copyright (c) Drastic Actions. All rights reserved.
 // </copyright>
 
-#if IOS
+#if IOS || __MACCATALYST__
 namespace MauiRss
 {
     /// <summary>

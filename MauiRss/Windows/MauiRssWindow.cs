@@ -1,4 +1,4 @@
-﻿#if !IOS && !WINDOWS
+﻿#if !IOS && !WINDOWS && !__MACCATALYST__
 using DrasticMaui;
 using System;
 using System.Collections.Generic;
